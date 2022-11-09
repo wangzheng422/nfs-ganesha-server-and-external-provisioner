@@ -173,14 +173,15 @@ spec:
       labels:
         app: nfs-provisioner
     spec:
-      nodeAffinity:
-        required:
-          nodeSelectorTerms:
-          - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-              - one-master-03.acm-demo-one.redhat.ren
+      affinity:
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - one-master-03.acm-demo-one.redhat.ren
       serviceAccount: nfs-provisioner
       containers:
         - name: nfs-provisioner
