@@ -114,7 +114,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: odf-lvm-vg1
+  storageClassName: local-volume
 ---
 kind: Service
 apiVersion: v1
